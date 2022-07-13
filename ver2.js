@@ -159,7 +159,9 @@ if (scaleType==="chr"){
 } else if(scaleType==="min-pen"){
     scaleType="m pent.";
 } else if(scaleType==="min"){
-    scaleType="m";
+    scaleType=" min";
+} else if(scaleType==="maj"){
+    scaleType="  maj";
 }
 
 scaleText.innerText=`${NOTES_NUM_NAMES[startingNote]}${scaleType}`;
@@ -461,7 +463,7 @@ if(event.target.classList.contains("pad")){
     ;[...event.targetTouches].forEach((touch)=>{
         synth.triggerAttack(event.target.dataset.sound);
         event.target.classList.add(touch.identifier);
-        event.target.style.opacity= "0.8";
+        event.target.classList.add("pressed");
 })
 }
 
@@ -480,7 +482,7 @@ if (event.cancelable) event.preventDefault();
         if(pad.classList.contains(touch.identifier)){
             synth.triggerRelease(pad.dataset.sound);
             pad.classList.remove(touch.identifier);
-            pad.style.opacity= "1";
+            pad.classList.remove("pressed");
         }
 
     });
@@ -508,10 +510,10 @@ if (event.cancelable) event.preventDefault();
                             console.log("changed");
                             synth.triggerRelease(pad.dataset.sound);
                             pad.classList.remove(touch.identifier);
-                            pad.style.opacity= "1";
+                            pad.classList.remove("pressed");
                             synth.triggerAttack(newNote.dataset.sound);
                             newNote.classList.add(touch.identifier);                    
-                            newNote.style.opacity= "0.8";          
+                            newNote.classList.add("pressed");                    
                         }
                     
                     }
