@@ -97,7 +97,6 @@ button{
 }
 
 p{
-    transition: all 0.5s ease;
     pointer-events: none;
     color: #282C32;
     opacity: .5;
@@ -195,6 +194,10 @@ sub{
 }
 
 
+.pad.pressed p{
+    color:white;
+}
+
 
 
 .pointer{
@@ -259,7 +262,6 @@ h4{
 
 .scale-selector{
     flex: 1;
-    transform: translate3d(0,-100%, 1);
     top:0;
     left:0;
     height: 100%;
@@ -276,6 +278,10 @@ h4{
     touch-action: manipulation;
     background: #0F1214;
     border-radius: 8px;
+    pointer-events: none;
+    touch-action: none;
+
+
 
 }
 
@@ -283,7 +289,6 @@ h4{
     pointer-events: all;
 
     opacity: 1;
-    transform: translate3d(0, 0, 0);
     touch-action: manipulation;
 
 }

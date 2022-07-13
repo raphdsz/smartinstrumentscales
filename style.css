@@ -97,7 +97,6 @@ button{
 }
 
 p{
-    transition: all 0.5s ease;
     pointer-events: none;
     color: #282C32;
     opacity: .5;
@@ -196,6 +195,12 @@ sub{
 
 .pad.pressed{
     background: #eb0753;
+    color:white;
+}
+
+
+.pad.pressed p{
+    color:white;
 }
 
 
